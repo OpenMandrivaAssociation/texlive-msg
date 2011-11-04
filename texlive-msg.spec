@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/msg
+# catalog-date 2006-11-16 17:55:10 +0100
+# catalog-license lppl
+# catalog-version 0.40
 Name:		texlive-msg
 Version:	0.40
 Release:	1
@@ -59,6 +65,7 @@ is provided in English.
 %doc %{_texmfdistdir}/source/latex/msg/msg.dtx
 %doc %{_texmfdistdir}/source/latex/msg/msg.ins
 %doc %{_texmfdistdir}/source/latex/msg/msgfiles.dtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -69,3 +76,5 @@ is provided in English.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
