@@ -6,7 +6,7 @@
 # catalog-version 0.40
 Name:		texlive-msg
 Version:	0.40
-Release:	5
+Release:	6
 Summary:	A package for LaTeX localisation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/msg
