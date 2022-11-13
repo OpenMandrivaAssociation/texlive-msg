@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/msg
-# catalog-date 2006-11-16 17:55:10 +0100
-# catalog-license lppl
-# catalog-version 0.40
 Name:		texlive-msg
-Version:	0.51
+Version:	49578
 Release:	1
 Summary:	A package for LaTeX localisation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/msg
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/msg.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/msg.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/msg.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/msg.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/msg.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/msg.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -29,12 +23,12 @@ localise the message file to their own language. Documentation
 is provided in English.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -58,24 +52,11 @@ is provided in English.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.40-2
-+ Revision: 754179
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.40-1
-+ Revision: 719075
-- texlive-msg
-- texlive-msg
-- texlive-msg
-- texlive-msg
-
