@@ -1,6 +1,6 @@
 Name:		texlive-msg
 Version:	49578
-Release:	1
+Release:	2
 Summary:	A package for LaTeX localisation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/msg
